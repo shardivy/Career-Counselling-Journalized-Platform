@@ -217,7 +217,7 @@
 
 from pathlib import Path
 from datetime import timedelta
-import os
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -226,41 +226,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 # =========================
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get(
-    "SECRET_KEY",
-    "django-insecure-o1^^8h81pat7kg)*f9=1r7139_z0y9ze6w@@podmhl3ar*cfm9"
-)
+SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-DEBUG = os.environ.get("DEBUG", "True") == "True"
-
-ALLOWED_HOSTS = os.environ.get(
-    "ALLOWED_HOSTS",
-    "127.0.0.1,localhost"
-).split(",")
-
-
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-
-USE_X_FORWARDED_HOST = True
-
-SECURE_SSL_REDIRECT = True
-
-CSRF_TRUSTED_ORIGINS = [
-    origin for origin in os.environ.get(
-        "CSRF_TRUSTED_ORIGINS", ""
-    ).split(",") if origin
-]
-
-
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default="").split(',')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -374,11 +344,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'USER': os.environ.get('DATABASE_USER'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': os.environ.get('DATABASE_HOST', 'db'),
-        'PORT': os.environ.get('DATABASE_PORT', '3306'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
@@ -386,20 +356,28 @@ DATABASES = {
 }
 
 
+# =========================
+# MEDIA / STATIC
+# =========================
+
+STATIC_URL = 'static/'
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # =========================
 # EMAIL
 # =========================
 
-EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND")
-EMAIL_HOST = os.environ.get("EMAIL_HOST")
-EMAIL_PORT = int(os.environ.get("EMAIL_PORT", 587))
-EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS") == "True"
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # =========================
@@ -431,11 +409,9 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
-
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# =========================
+# DJANGO REST FRAMEWORK
+# =========================
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -452,10 +428,28 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=2),
     "AUTH_HEADER_TYPES": ("Bearer",),
-} 
+}
 
-# settings.py
 
-MSG91_AUTH_KEY = os.environ.get("MSG91_AUTH_KEY")
-MSG91_WHATSAPP_NUMBER = os.environ.get("MSG91_WHATSAPP_NUMBER")
-MSG91_OTP_TEMPLATE_NAME = os.environ.get("MSG91_OTP_TEMPLATE_NAME")
+# =========================
+# CELERY
+# =========================
+
+CELERY_BROKER_URL = config('REDIS_URL')
+CELERY_RESULT_BACKEND = config('REDIS_URL')
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+
+# =========================
+# MSG91
+# =========================
+
+MSG91_AUTH_KEY = config('MSG91_AUTH_KEY')
+MSG91_WHATSAPP_NUMBER = config('MSG91_WHATSAPP_NUMBER')
+MSG91_OTP_TEMPLATE_NAME = config('MSG91_OTP_TEMPLATE_NAME')
+
+TIME_ZONE = "Asia/Kolkata"
+USE_TZ = False
