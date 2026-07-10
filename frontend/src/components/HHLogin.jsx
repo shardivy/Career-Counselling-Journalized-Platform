@@ -163,7 +163,7 @@ const HHLogin = () => {
                         >
                             {/* LOGO */}
                             <div style={{ marginBottom: 20 }}>
-                                {/* <img
+                                <img
                                     src="/Abhinav-logo.jpg"
                                     alt="Career Counselling"
                                     style={{
@@ -172,7 +172,7 @@ const HHLogin = () => {
                                         objectFit: "contain",
                                         marginBottom: 6,
                                     }}
-                                /> */}
+                                />
 
                                 <div
                                     style={{

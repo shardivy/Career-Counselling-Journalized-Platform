@@ -202,11 +202,11 @@ useEffect(() => {
                 }}
                 onClick={() => navigate("/handholding/dashboard")}
               >
-                {/* <img
+                <img
                   src="/Abhinav-logo.jpg"
                   alt="Handholding"
                   style={{ width: 110, marginBottom: 8 }}
-                /> */}
+                />
 
                 <div
                   style={{
@@ -269,7 +269,7 @@ useEffect(() => {
                   setDrawerVisible(false);
                 }}
               >
-                {/* <img src="/Abhinav-logo.jpg" width={60} /> */}
+                <img src="/Abhinav-logo.jpg" width={60} />
                 <div>
                   <div style={{ fontWeight: 700, color: "#fff" }}>
                     Career Counselling

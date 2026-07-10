@@ -117,14 +117,14 @@ const onFinish = async (values) => {
             >
               {/* LOGO + TITLE */}
               <div style={{ marginBottom: 16 }}>
-                {/* <img
+                <img
                   src="/Abhinav-logo.jpg"
                   alt="Career Counselling"
                   style={{
                     width: 150,
                     marginBottom: 6,
                   }}
-                /> */}
+                />
 
                 <div
                   style={{

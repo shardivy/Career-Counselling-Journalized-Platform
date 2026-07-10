@@ -37,6 +37,9 @@ const AdminLogin = () => {
       sessionStorage.removeItem("profileWarningShown");
       message.success(successMessage);
 
+      const programPackages =
+        JSON.parse(localStorage.getItem("programPackages") || "[]") || [];
+
       // 🔑 ROLE-BASED REDIRECT (backend driven)
       switch (user.role) {
         case "admin":
@@ -54,42 +57,33 @@ const AdminLogin = () => {
           navigate("/s-admin/uiux-dashboard");
           break;
 
-        //  case "student":
-        //   navigate("/student/student-profile");
-        //   break;
-
         case "basic_user":
           navigate("/student/dashboard");
           break;
 
-        // case "student":
-        //   if (complete_profile) {
-        //     navigate("/student/dashboard");
-        //   } else {
-        //     navigate("/student/student-profile");
-        //   }
-        //   break;
-
-        case "student":
-  if (complete_profile) {
-    // 🔥 First go to program selection
-    navigate("/program-selection");
-  } else {
-    // incomplete profile
-    navigate("/student/student-profile");
-  }
-  break;
+        case "student": {
+          if (programPackages.length === 1) {
+            const [onlyProgram] = programPackages;
+            localStorage.setItem("selectedProgramId", onlyProgram.program_id);
+            localStorage.setItem("selectedProgram", onlyProgram.program_name);
+            localStorage.setItem("selectedPackageId", onlyProgram.package_id);
+            localStorage.setItem("selectedPackage", onlyProgram.package_name);
+            navigate("/student/student-profile");
+          } else {
+            navigate("/program-selection");
+          }
+          break;
+        }
 
         case "handholding":
           navigate("/handholding/dashboard");
           break;
 
-
         default:
           message.warning("No dashboard assigned for this role");
       }
     }
-  }, [success, successMessage, complete_profile, user, navigate]);
+  }, [success, successMessage, user, navigate]);
 
   /* ========= ERROR ========= */
   useEffect(() => {
@@ -104,7 +98,7 @@ const AdminLogin = () => {
       event.preventDefault(); // 🔥 STOP PAGE RELOAD
     }
 
-    console.log("Login Payload:", values);
+    // console.log("Login Payload:", values);
     dispatch(loginUser(values));
   };
 
@@ -210,7 +204,7 @@ const AdminLogin = () => {
             >
               {/* LOGO */}
               <div style={{ marginBottom: 20 }}>
-                {/* <img
+                <img
                   src="/Abhinav-logo.jpg"
                   alt="Career Counselling"
                   style={{
@@ -219,7 +213,7 @@ const AdminLogin = () => {
                     objectFit: "contain",
                     marginBottom: 6,
                   }}
-                /> */}
+                />
 
                 <div
                   style={{
@@ -317,7 +311,7 @@ const AdminLogin = () => {
 
                 <Divider style={{ margin: "28px 0" }} />
 
-                {/* <Text style={{ textAlign: "center", display: "block" }}>
+                <Text style={{ textAlign: "center", display: "block" }}>
                   Want to watch video?{" "}
                   <Text
                     type="primary"
@@ -327,11 +321,11 @@ const AdminLogin = () => {
                       color: "#1677ff",
                       fontWeight: "500",
                     }}
-                    onClick={() => navigate("/welcome")}
+                    onClick={() => navigate("/welcome", { state: { openVideo: true } })}
                   >
                     Click here
                   </Text>
-                </Text> */}
+                </Text>
 
                 <Text style={{ textAlign: "center", display: "block" }}>
                   Don’t have an student account?{" "}
