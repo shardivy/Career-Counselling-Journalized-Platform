@@ -136,14 +136,11 @@ ________________________________________
 
 Report Details
 
-Report ID:
-{report.id}
+Report ID:{report.id}
 
-Upload Date:
-{report.uploaded_at.strftime('%d %B %Y')}
+Upload Date:{report.uploaded_at.strftime('%d %B %Y')}
 
-Status:
-{status_text}
+Status:{status_text}
 
 ________________________________________
 
@@ -152,7 +149,7 @@ ________________________________________
 ________________________________________
 
 Best Regards,
-Abhinav Career Scope
+TheCareerFront
 """
 
     send_mail(

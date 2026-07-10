@@ -4,48 +4,6 @@ from django.conf import settings
 from counselling_slot.models import BookingCounsellor
 
 
-# def send_booking_created_email(user, booking_slots, booking_date):
-#     """
-#     Email when booking is created
-#     """
-
-#     subject = "Your Counselling Session Has Been Booked"
-
-#     slot_details = ""
-#     for slot in booking_slots:
-#         slot_details += f"""
-# Slot Date: {slot.date}
-# Start Time: {slot.start_time}
-# End Time: {slot.end_time}
-# Mode: {slot.mode}
-# """
-
-#     message = f"""
-# Dear {user.first_name},
-
-# Your counselling session has been successfully booked.
-
-# Booking Date: {booking_date}
-
-# Session Details:
-# {slot_details}
-
-# Please make sure to join the session on time.
-
-# If you need to reschedule, please contact support.
-
-# Best Regards  
-# Abhinav Career Scope
-# """
-
-#     send_mail(
-#         subject,
-#         message,
-#         settings.DEFAULT_FROM_EMAIL,
-#         [user.email],
-#         fail_silently=True
-#     )
-
 def send_booking_created_email(user, booking, booking_slots, booking_date, send_email_func):
 
     subject = "Your Counselling Session Has Been Booked"
@@ -70,11 +28,10 @@ Your counselling session has been successfully booked.
 
 Booking Date: {booking_date}
 
-Session Details:
-{slot_details}
+Session Details:{slot_details}
 
 Best Regards
-Abhinav Career Scope
+TheCareerFront
 """,
         user.email
     )
@@ -107,53 +64,10 @@ Session Details:
 {slot_details}
 
 Best Regards
-Abhinav Career Scope
+TheCareerFront
 """,
             email
         )
-
-# def send_booking_updated_email(user, booking_slots, booking_date):
-#     """
-#     Email when booking is updated
-#     """
-
-#     subject = "Your Counselling Session Has Been Updated"
-
-#     slot_details = ""
-#     for slot in booking_slots:
-#         slot_details += f"""
-# Slot Date: {slot.date}
-# Start Time: {slot.start_time}
-# End Time: {slot.end_time}
-# Mode: {slot.mode}
-# """
-
-#     message = f"""
-# Dear {user.first_name},
-
-# Your counselling session booking has been updated.
-
-# Updated Session Details:
-
-# Booking Date: {booking_date}
-
-# {slot_details}
-
-# Please review the updated session schedule.
-
-# If you have any questions, feel free to contact our support team.
-
-# Best Regards  
-# Abhinav Career Scope
-# """
-
-#     send_mail(
-#         subject,
-#         message,
-#         settings.DEFAULT_FROM_EMAIL,
-#         [user.email],
-#         fail_silently=True
-#     )
 
 def send_booking_updated_email(user, booking, booking_slots, booking_date, send_email_func):
 
@@ -176,11 +90,10 @@ Your counselling session booking has been updated.
 
 Booking Date: {booking_date}
 
-Session Details:
-{slot_details}
+Session Details:{slot_details}
 
 Best Regards
-Abhinav Career Scope
+TheCareerFront
 """,
         user.email
     )
@@ -206,11 +119,10 @@ Role: {bc.role}
 
 Booking Date: {booking_date}
 
-Updated Session Details:
-{slot_details}
+Updated Session Details:{slot_details}
 
 Best Regards
-Abhinav Career Scope
+TheCareerFront
 """,
             email
         )
@@ -239,16 +151,16 @@ def generate_counselling_reminder(slot, student_profile, booking_status, program
     # ==========================================
     if booking_status in ["not_booked", "pending"]:
         return {
-            "subject": "Slot Booking Reminder | Abhinav Career Scope",
+            "subject": "Slot Booking Reminder | TheCareerFront",
             "message": f"""
-Greetings from Abhinav Career Scope.
+Greetings from TheCareerFront.
 
 You have not booked your counselling slot yet.
 
 Please book your slot as soon as possible to continue your counselling process.
 
 Regards,
-Abhinav Career Scope.
+TheCareerFront.
 """.strip()
         }
 
@@ -256,10 +168,10 @@ Abhinav Career Scope.
     # 🔹 BOOKED / RESCHEDULED SUBJECT
     # ==========================================
     if booking_status == "rescheduled":
-        subject = "Rescheduled Counselling Session Reminder | Abhinav Career Scope"
+        subject = "Rescheduled Counselling Session Reminder | TheCareerFront"
         session_label = "Your rescheduled session"
     else:
-        subject = "Counselling Session Reminder | Abhinav Career Scope"
+        subject = "Counselling Session Reminder | TheCareerFront"
         session_label = "Your session"
 
     # ==========================================
@@ -268,7 +180,7 @@ Abhinav Career Scope.
     if preferred_mode == "online":
 
         message = f"""
-Greetings from Abhinav Career Scope.
+Greetings from TheCareerFront.
 
 Program : {program_name}
 Package : {package_name}
@@ -288,7 +200,7 @@ Call / WhatsApp:
 +91 99226 95424 | +91 82080 30557
 
 Regards,
-Abhinav Career Scope.
+TheCareerFront.
 """.strip()
 
     # ==========================================
@@ -297,7 +209,7 @@ Abhinav Career Scope.
     else:
 
         message = f"""
-Greetings from Abhinav Career Scope.
+Greetings from TheCareerFront.
 
 Program : {program_name}
 Package : {package_name}
@@ -317,7 +229,7 @@ Call / WhatsApp:
 +91 99226 95424 | +91 82080 30557
 
 Regards,
-Abhinav Career Scope.
+TheCareerFront.
 """.strip()
 
     return {

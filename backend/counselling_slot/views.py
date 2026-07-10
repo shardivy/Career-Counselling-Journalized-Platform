@@ -80,8 +80,8 @@ class CounsellorListAPIView(APIView):
     def get(self, request):
         # counsellors = Counsellor.objects.select_related("user").all()
         counsellors = Counsellor.objects.select_related("user").exclude(
-            user__first_name__icontains="Reena",
-            user__last_name__icontains="Bhutada"
+            user__first_name__icontains="Priti",
+            user__last_name__icontains="Borse"
         )
         serializer = CounsellorListSerializer(counsellors, many=True)
         return Response(serializer.data)
@@ -100,8 +100,8 @@ class ReenaCounsellorAPIView(APIView):
     def get(self, request):
 
         counsellors = Counsellor.objects.select_related("user").filter(
-            user__first_name__icontains="Reena",
-            user__last_name__icontains="Bhutada"
+            user__first_name__icontains="Priti",
+            user__last_name__icontains="Borse"
         )
 
         serializer = CounsellorListSerializer(

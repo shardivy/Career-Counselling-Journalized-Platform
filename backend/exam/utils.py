@@ -87,7 +87,7 @@ Call / WhatsApp:
 +91 99226 95424 | +91 82080 30557
 
 Best Regards,
-Abhinav Career Scope
+TheCareerFront
 """
 
     send_mail(
@@ -132,7 +132,7 @@ Please log in to your student portal and complete the remaining steps for your e
 If you need assistance, feel free to contact our support team.
 
 Best Regards  
-Support Team
+TheCareerFront
 """
 
     send_mail(

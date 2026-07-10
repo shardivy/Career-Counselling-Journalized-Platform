@@ -35,7 +35,7 @@ If you did not request a password reset, please ignore this email. Your account 
 If you need any assistance, feel free to contact our support team.
 
 Best regards,  
-Abhinav Career Scope
+TheCareerFront 
 """
 
     send_mail(
@@ -66,7 +66,7 @@ Password: {password}
 If you have any questions or require assistance, please feel free to contact our support team.
 
 Best regards,  
-Abhinav Career Scope
+TheCareerFront
 """
 
     send_mail(
@@ -77,106 +77,6 @@ Abhinav Career Scope
         fail_silently=False
     )
 
-
-# def send_credentials_email(email, password, program_name, package_name):
-#     subject = "Congratulations! Your Account Has Been Successfully Created "
-
-#     message = f"""
-# Dear Candidate,
-
-# Congratulations! 
-
-# You have been successfully selected for the **{program_name}** program under the **{package_name}** service.
-
-# We have excited to support you in your career journey.
-
-# --------------------------------------------------
-# Access Your Dashboard
-# --------------------------------------------------
-
-# You can access your dashboard and track your complete counselling journey using the login credentials below:
-
-# Login Link:
-# https://staging.abhinavcareerscope.com/
-
-# Login Credentials:
-# Email: {email}
-# Password: {password}
-
-# --------------------------------------------------
-# Payment Details
-# --------------------------------------------------
-
-# Session Fees:
-
-# 🔹 Online Session: ₹5,000 (via GPay)
-
-# 🔹 Offline Session:
-# ₹500 via GPay + ₹4,500 cash at the time of counseling
-
-# --------------------------------------------------
-# Important Instructions
-# --------------------------------------------------
-
-# ✔️ Please join using a **Laptop only**  
-# ✔️ Join **5 minutes before the scheduled session** for technical checks  
-# ✔️ Keep **paper and pen ready** for taking notes  
-
-# --------------------------------------------------
-# Offline Session Process (If Applicable)
-# --------------------------------------------------
-
-# Office Address:
-
-# Mrs. Reena Bhutada  
-# Abhinav Career Scope, Pune  
-# Bhagwati Maestros, Miller 403  
-# LMD Chowk, Above Indian Smart Bazaar  
-# Bavdhan, Pune – 411021  
-
-# 📌 Important Notes:
-
-# • Office is near **Chandani Chowk, Bavdhan**  
-# • Please start **20 minutes earlier** considering traffic  
-# • **Parking is available outside the building gate**
-
-# --------------------------------------------------
-# Online Session Instructions
-# --------------------------------------------------
-
-# If your session is online:
-
-# ✔️ Please join **5 minutes before the scheduled time**  
-# ✔️ Ensure you have a **stable internet connection**  
-# ✔️ Join the session using a **Laptop**
-
-# --------------------------------------------------
-# Fee Reminder (If Applicable)
-# --------------------------------------------------
-
-# Kindly pay the remaining **₹4,500 in cash** at the time of counseling.
-
-# (If the fees are already fully paid, please ignore this reminder.)
-
-# --------------------------------------------------
-
-# If you have any questions or need assistance, feel free to contact our support team.
-
-# We look forward to guiding you through your career journey.
-
-# Best Regards,  
-# Career Counselling Team  
-# CareerFutura
-# """
-
-#     email_status = send_mail(
-#         subject,
-#         message,
-#         settings.DEFAULT_FROM_EMAIL,
-#         [email],
-#         fail_silently=False
-#     )
-#     print("EMAIL STATUS:", email_status)
 
 def send_credentials_email(
     email,
@@ -273,11 +173,13 @@ Offline Session Process
 
 Office Address:
 
-Mrs. Reena Bhutada
-Abhinav Career Scope, Pune
-Bhagwati Maestros, Miller 403
-LMD Chowk, Above Indian Smart Bazaar
-Bavdhan, Pune – 411021
+Right Analysis Matter Technology Pvt. Ltd.
+Golden Arch, B1 Flat No. 4, 
+1st Floor, Shivangya, Apartment, Lane No. 4C, 
+next to Prabhat Society, 
+Bavdhan, Pune, Maharashtra 411021
+
+
 
 📌 Important Notes:
 
@@ -310,7 +212,7 @@ Call / WhatsApp:
 We look forward to guiding you in your career journey.
 
 Best Regards,
-Abhinav Career Scope
+TheCareerFront
 """
 
     # ==========================================
@@ -352,7 +254,7 @@ Password: {password}
 If you did not perform this action, please contact support immediately.
 
 Regards,
-Abhinav Career Scope
+TheCareerFront
 """
 
     send_mail(
