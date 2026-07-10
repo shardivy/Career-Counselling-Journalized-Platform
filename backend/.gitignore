@@ -1,9 +1,25 @@
-
+.venv/
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.sqlite3
+db.sqlite3
+.env
 
-# Ignore migration cache only
-*/migrations/__pycache__/
+
+# Django-specific files
+media/
+staticfiles/
+db.sql
+
+# Ignore migrations if you prefer to generate them on the server
+*/migrations/*
+!*/migrations/__init__.py
+
+# Ignore dependency and virtual environment files
+venv/
+env/
+*.pip
+Pipfile
+Pipfile.lock
+poetry.lock
+# Ignore logs and temp files
+logs/
+*.log
