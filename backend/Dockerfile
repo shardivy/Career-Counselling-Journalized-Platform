@@ -60,6 +60,3 @@ EXPOSE 8000
 
 # Run Django with ASGI (async supported)
 CMD ["gunicorn", "backend.asgi:application", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "--workers", "3"]
-
-
-ADD this code in that file
