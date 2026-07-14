@@ -28,6 +28,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(choices=[('superadmin', 'Super Admin'), ('admin', 'Admin'), ('counsellor', 'Counsellor'), ('student', 'Student'), ('parent', 'Parent'), ('basic_user', 'Basic User'), ('ui_ux', 'UI/UX'), ('handholding', 'Handholding')], max_length=50, unique=True)),
+                ('name', models.CharField(choices=[('superadmin', 'Super Admin'), ('admin', 'Admin'), ('counsellor', 'Counsellor'), ('student', 'Student'), ('parent', 'Parent'), ('basic_user', 'Basic User'), ('ui_ux', 'UI/UX'), ('handholding', 'Handholding')], max_length=50, unique=True)),
             ],
         ),
         migrations.CreateModel(
@@ -40,10 +41,13 @@ class Migration(migrations.Migration):
                 ('public_id', models.CharField(blank=True, max_length=20, null=True, unique=True)),
                 ('first_name', models.CharField(max_length=100)),
                 ('last_name', models.CharField(blank=True, max_length=100, null=True)),
+                ('last_name', models.CharField(blank=True, max_length=100, null=True)),
                 ('email', models.EmailField(max_length=254, unique=True)),
                 ('phone', models.CharField(blank=True, max_length=15, null=True)),
                 ('is_active', models.BooleanField(default=True)),
                 ('is_staff', models.BooleanField(default=False)),
+                ('is_converted_lead', models.BooleanField(default=False)),
+                ('original_password', models.CharField(blank=True, max_length=255, null=True)),
                 ('is_converted_lead', models.BooleanField(default=False)),
                 ('original_password', models.CharField(blank=True, max_length=255, null=True)),
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now)),

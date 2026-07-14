@@ -22,6 +22,13 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
+            name='StudentContent',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+            ],
+        ),
+        migrations.CreateModel(
             name='Content',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -34,6 +41,7 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(blank=True, null=True, upload_to='content_images/')),
                 ('is_draft', models.BooleanField(default=True)),
                 ('download_count', models.PositiveIntegerField(default=0)),
+                ('is_student_visible', models.BooleanField(default=True)),
                 ('is_student_visible', models.BooleanField(default=True)),
                 ('is_active', models.BooleanField(default=True)),
                 ('free_content', models.BooleanField(default=False)),

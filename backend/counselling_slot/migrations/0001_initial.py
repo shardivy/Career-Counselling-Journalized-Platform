@@ -74,6 +74,7 @@ class Migration(migrations.Migration):
                 ('is_available', models.BooleanField(default=True)),
                 ('is_deleted', models.BooleanField(default=False)),
                 ('is_handholding_session_available', models.BooleanField(default=True)),
+                ('is_handholding_session_available', models.BooleanField(default=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
             ],
