@@ -197,7 +197,7 @@ Instructions for Online:
 For any queries or assistance:
 
 Call / WhatsApp:
-+91 99226 95424 | +91 82080 30557
++91 84849 05526 | +91 84849 06643
 
 Regards,
 TheCareerFront.
@@ -226,7 +226,7 @@ Instructions for Offline:
 For any queries or assistance:
 
 Call / WhatsApp:
-+91 99226 95424 | +91 82080 30557
++91 84849 05526 | +91 84849 06643
 
 Regards,
 TheCareerFront.

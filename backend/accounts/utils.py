@@ -207,7 +207,7 @@ ________________________________________
 For any queries or assistance:
 
 Call / WhatsApp:
-+91 99226 95424 | +91 82080 30557
++91 84849 05526 | +91 84849 06643
 
 We look forward to guiding you in your career journey.
 
