@@ -230,7 +230,14 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default="").split(',')
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', default="").split(',')
+ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS', default="").split(",") if host.strip()]
+
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in config("CSRF_TRUSTED_ORIGINS", default="").split(",")
+    if origin.strip()
+]
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
