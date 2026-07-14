@@ -244,7 +244,7 @@ const SlotBookingList = () => {
 
   const openGoogleMap = () => {
     const mapUrl =
-      "https://www.google.com/maps/search/?api=1&query=Abhinav+Career+Scope+Bavdhan+Pune";
+      "https://maps.app.goo.gl/Y4ZWX4FSeC1SmgY69";
 
     window.open(mapUrl, "_blank");
   };
@@ -601,7 +601,7 @@ const SlotBookingList = () => {
               />
               <div>
                 <Text strong style={{ fontSize: 16 }}>
-                  Mrs. Reena Bhutada
+                  Mrs. Priti Borse
                 </Text>
               </div>
             </div>
@@ -611,10 +611,14 @@ const SlotBookingList = () => {
                 🏢 Office Address
               </Text>
               <Text style={{ lineHeight: 1.5 }}>
-                Abhinav Career Scope, Pune <br />
+                {/* Abhinav Career Scope, Pune <br />
                 Bhagwati Maestros, Miller 403 <br />
                 LMD Chowk, Above Indian Smart Bazaar <br />
-                Bavdhan, Pune – 411021
+                Bavdhan, Pune – 411021 */}
+
+                Golden Arch, B1 Flat No. 4, 1st Floor, <br />
+                Shivangya Apt, Lane 4C, Bavdhan,<br />
+                Pune, Maharashtra 411021 <br />
               </Text>
             </div>
           </div>

@@ -109,9 +109,9 @@ useEffect(() => {
       icon: <CalendarOutlined />,
     },
     {
-      title: "Reports",
-      value: dashboardStats?.reports?.pending_uploaded || 0,
-      uploadPending: dashboardStats?.reports?.pending_uploaded || 0,
+      title: "Aptitude Test Reports",
+      value: dashboardStats?.reports?.total || 0,
+      uploadPending: dashboardStats?.reports?.not_received || 0,
       icon: <FileTextOutlined />,
     },
     {

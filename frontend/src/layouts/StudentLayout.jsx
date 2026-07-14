@@ -717,7 +717,7 @@ export default function StudentLayout() {
               >
 
                 {/* LOGO */}
-                <img
+                {/* <img
                   src="/Abhinav-logo.jpg"
                   alt="Student Panel"
                   style={{
@@ -726,7 +726,7 @@ export default function StudentLayout() {
                     objectFit: "contain",
                     marginBottom: 6,
                   }}
-                />
+                /> */}
 
                 <div
                   style={{
@@ -736,7 +736,7 @@ export default function StudentLayout() {
                     lineHeight: "24px",
                   }}
                 >
-                  Career Counselling
+                  TheCareerFront
                 </div>
 
                 {/* SUBTITLE */}
@@ -797,7 +797,7 @@ export default function StudentLayout() {
                 }}
               >
                 {/* LOGO */}
-                <img
+                {/* <img
                   src="/Abhinav-logo.jpg"
                   alt="Career Counselling"
                   style={{
@@ -806,7 +806,7 @@ export default function StudentLayout() {
                     objectFit: "contain",
                     marginBottom: 6,
                   }}
-                />
+                /> */}
 
                 {/* TITLE */}
                 <div
@@ -817,7 +817,7 @@ export default function StudentLayout() {
                     lineHeight: "20px",
                   }}
                 >
-                  Career Counselling
+                  TheCareerFront
                 </div>
 
                 {/* SUBTITLE */}

@@ -97,9 +97,9 @@ export default function AdmissionCounselling() {
             <div className="sec-head">Guided by</div>
 
             <div className="mentor-card">
-              <div className="mentor-avatar">RB</div>
+              <div className="mentor-avatar">PB</div>
               <div className="mentor-info">
-                <h4>Reena Bhutada</h4>
+                <h4>Priti Borse</h4>
                 <p>
                   Learn from a seasoned expert who understands the nuances of
                   the Maharashtra and National engineering admission cycles. We

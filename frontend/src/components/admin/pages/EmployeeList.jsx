@@ -157,7 +157,7 @@ const EmployeeList = () => {
   {
   title: "Actions",
   render: (_, record) => {
-    const isRestrictedUser = record.name === "Reena Bhutada";
+    const isRestrictedUser = record.name === "Priti Borse";
 
     return (
       <Space wrap>

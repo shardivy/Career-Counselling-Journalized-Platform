@@ -150,7 +150,7 @@ const Program = () => {
     "Seminar / Webinar-Seminar / Webinar": "/seminar-webinar-session",
   };
 
-  const eleventhAdmissionWhatsappLink = "https://chat.whatsapp.com/HwiCs0qVJBe91abE42SpDz";
+  // const eleventhAdmissionWhatsappLink = "https://chat.whatsapp.com/HwiCs0qVJBe91abE42SpDz";
   const isEleventhAdmissionProgram = finalProgram === "11th Admission";
 
   // ================= FREE CONTENT CARD =================

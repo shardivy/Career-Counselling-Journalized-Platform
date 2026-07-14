@@ -125,12 +125,12 @@ export default function SeminarWebinarSession() {
             <div className="mentor-card">
 
               <div className="mentor-avatar">
-                RB
+                PB
               </div>
 
               <div className="mentor-info">
 
-                <h4>Reena Bhutada</h4>
+                <h4>Priti Borse</h4>
 
                 <p>
                   National Award-Winning Career Counselor with over
