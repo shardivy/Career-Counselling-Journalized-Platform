@@ -1,4 +1,4 @@
-import React, { useState  ,useEffect  } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Layout,
   Menu,
@@ -41,13 +41,13 @@ export default function HandholdingLayout() {
   const screens = useBreakpoint();
   const dispatch = useDispatch();
 
-const { profile } = useSelector((state) => state.profile);
+  const { profile } = useSelector((state) => state.profile);
 
   const [drawerVisible, setDrawerVisible] = useState(false);
   // const [showModal, setShowModal] = useState(false);
 
-const username =
-  `${profile?.first_name || ""} ${profile?.last_name || ""}`.trim() ||profile?.email ||"Handholding User";
+  const username =
+    `${profile?.first_name || ""} ${profile?.last_name || ""}`.trim() || profile?.email || "Handholding User";
   const isProfilePage = location.pathname === "/handholding/profile";
 
   const truncatedUsername = screens.xs
@@ -56,34 +56,34 @@ const username =
       : username
     : username;
 
-    useEffect(() => {
-  dispatch(getProfile());
-}, [dispatch]);
+  useEffect(() => {
+    dispatch(getProfile());
+  }, [dispatch]);
 
-useEffect(() => {
-  if (profile?.participant_id) {
-    localStorage.setItem("participant_id", profile.participant_id);
-  }
+  useEffect(() => {
+    if (profile?.participant_id) {
+      localStorage.setItem("participant_id", profile.participant_id);
+    }
 
-  // Store show_profile
-  if (profile?.show_profile !== undefined) {
-    localStorage.setItem(
-      "show_profile",
-      JSON.stringify(profile.show_profile)
-    );
-  }
-}, [profile]);
+    // Store show_profile
+    if (profile?.show_profile !== undefined) {
+      localStorage.setItem(
+        "show_profile",
+        JSON.stringify(profile.show_profile)
+      );
+    }
+  }, [profile]);
 
-// useEffect(() => {
-//   if (profile?.is_converted_lead === false) {
-//     const alreadyShown = localStorage.getItem("conversionMsgShown");
+  // useEffect(() => {
+  //   if (profile?.is_converted_lead === false) {
+  //     const alreadyShown = localStorage.getItem("conversionMsgShown");
 
-//     if (!alreadyShown) {
-//       setShowModal(true);
-//       localStorage.setItem("conversionMsgShown", "true");
-//     }
-//   }
-// }, [profile]);
+  //     if (!alreadyShown) {
+  //       setShowModal(true);
+  //       localStorage.setItem("conversionMsgShown", "true");
+  //     }
+  //   }
+  // }, [profile]);
 
   /* ================= MENU ================= */
   const menuItems = [
@@ -202,11 +202,11 @@ useEffect(() => {
                 }}
                 onClick={() => navigate("/handholding/dashboard")}
               >
-                <img
+                {/* <img
                   src="/Abhinav-logo.jpg"
                   alt="Handholding"
                   style={{ width: 110, marginBottom: 8 }}
-                />
+                /> */}
 
                 <div
                   style={{
@@ -215,7 +215,7 @@ useEffect(() => {
                     color: adminTheme.token.colorTextPrimary,
                   }}
                 >
-                  Career Counselling
+                  TheCareerFront
                 </div>
 
                 <div
@@ -269,10 +269,10 @@ useEffect(() => {
                   setDrawerVisible(false);
                 }}
               >
-                <img src="/Abhinav-logo.jpg" width={60} />
+                {/* <img src="/Abhinav-logo.jpg" width={60} /> */}
                 <div>
                   <div style={{ fontWeight: 700, color: "#fff" }}>
-                    Career Counselling
+                    TheCareerFront
                   </div>
                   <div style={{ fontSize: 11, color: "#fff" }}>
                     Handholding Panel

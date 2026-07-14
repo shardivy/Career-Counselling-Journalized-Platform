@@ -1,12 +1,13 @@
  import axios from "axios";
 
 const axiosInstance = axios.create({
-  // baseURL: "http://192.168.1.6:8000/api/",
-  // baseURL: "http://192.168.40.38:8000/api",
+  // baseURL: "http://192.168.1.2:8000/api/",
+  // baseURL: "http://192.168.51.38:8001/api",
   // baseURL: "http://10.235.252.38:8000/api",
   // baseURL: "https://fares-seek-adam-interracial.trycloudflare.com/api",
 
-  baseURL: "https://staging.abhinavcareerscope.com/api",
+  // baseURL: "https://staging.abhinavcareerscope.com/api",
+  baseURL: "https://thecareerfront.ramsolutions.in/api",
 
 
 });
@@ -20,7 +21,7 @@ const publicEndpoints = [
   // "/program-package/get-programs/",
   // "/lead-registeration/send-otp/",      
   // "/lead-registeration/verify-otp-register/",
-  // "/lead-registeration/student/      register/",
+  // "/lead-registeration/student/register/",
 
 ]; 
 

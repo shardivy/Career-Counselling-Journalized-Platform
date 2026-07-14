@@ -367,7 +367,7 @@ const StudentRegister = () => {
             <Col xs={24} md={14} style={{ padding: "48px 40px", background: "#fff", borderRadius: "0 24px 24px 0" }}>
               {/* LOGO + TITLE */}
               <div style={{ marginBottom: 16 }}>
-                <img
+                {/* <img
                   src="/Abhinav-logo.jpg"
                   alt="Career Counselling"
                   style={{
@@ -376,16 +376,16 @@ const StudentRegister = () => {
                     objectFit: "contain",
                     marginBottom: 6,
                   }}
-                />
+                /> */}
 
                 <div
                   style={{
-                    fontSize: 28,
+                    fontSize: window.innerWidth < 576 ? 22 : 28,
                     fontWeight: 700,
                     color: "#1E40AF",
                   }}
                 >
-                  Career Counselling Platform
+                  TheCareerFront
                 </div>
 
                 <Title

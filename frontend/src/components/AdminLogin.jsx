@@ -204,7 +204,7 @@ const AdminLogin = () => {
             >
               {/* LOGO */}
               <div style={{ marginBottom: 20 }}>
-                <img
+                {/* <img
                   src="/Abhinav-logo.jpg"
                   alt="Career Counselling"
                   style={{
@@ -213,16 +213,16 @@ const AdminLogin = () => {
                     objectFit: "contain",
                     marginBottom: 6,
                   }}
-                />
+                /> */}
 
                 <div
                   style={{
-                    fontSize: 28,   // bigger like Title
+                    fontSize: window.innerWidth < 576 ? 22 : 28,
                     fontWeight: 700,
                     color: "#1E40AF",
                   }}
                 >
-                  Career Counselling Platform
+                  TheCareerFront
                 </div>
               </div>
 
@@ -312,7 +312,7 @@ const AdminLogin = () => {
                 <Divider style={{ margin: "28px 0" }} />
 
                 <Text style={{ textAlign: "center", display: "block" }}>
-                  Want to watch video?{" "}
+                  Want to Know More?{" "}
                   <Text
                     type="primary"
                     style={{

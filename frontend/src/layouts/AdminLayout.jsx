@@ -673,7 +673,7 @@ const AdminLayout = () => {
                 onClick={() => navigate(getDashboardPath())}
               >
                 {/* LOGO */}
-                <img
+                {/* <img
                   src="/Abhinav-logo.jpg"
                   alt="Career Counselling"
                   style={{
@@ -682,7 +682,7 @@ const AdminLayout = () => {
                     objectFit: "contain",
                     marginBottom: 8,
                   }}
-                />
+                /> */}
 
                 {/* TITLE */}
                 <div
@@ -693,7 +693,7 @@ const AdminLayout = () => {
                     lineHeight: "24px",
                   }}
                 >
-                  Career Counselling
+                  TheCareerFront
                 </div>
 
                 {/* SUBTITLE */}
@@ -769,7 +769,7 @@ const AdminLayout = () => {
                   setDrawerVisible(false); // close drawer
                 }}
               >
-                <img
+                {/* <img
                   src="/Abhinav-logo.jpg"
                   alt="Career Counselling"
                   style={{
@@ -777,7 +777,7 @@ const AdminLayout = () => {
                     height: "auto",
                     objectFit: "contain",
                   }}
-                />
+                /> */}
 
                 <div>
                   <div
@@ -788,7 +788,7 @@ const AdminLayout = () => {
                       lineHeight: "18px",
                     }}
                   >
-                    Career Counselling
+                    TheCareerFront
                   </div>
 
                   <div

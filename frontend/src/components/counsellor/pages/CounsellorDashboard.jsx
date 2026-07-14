@@ -474,9 +474,9 @@ const CounsellorDashboard = () => {
   ];
 
   const staticLocation = {
-    officeName: "Abhinav Career Scope",
-    building: "Bhagwati Maestros, Miller 403",
-    landmarkLine1: "LMD Chowk, Above Indian Smart Bazaar",
+    officeName: "Right Analysis Matters Pvt. Ltd.",
+    building: "Golden Arch, B1 Flat No. 4, 1st Floor",
+    landmarkLine1: "Shivangya Apt, Lane 4C",
     area: "Bavdhan",
     city: "Pune",
     state: "Maharashtra",
@@ -631,7 +631,7 @@ const CounsellorDashboard = () => {
             <Divider />
 
             <h4>📌 Important Notes</h4>
-            <p>• {selectedSession.location.nearby}</p>
+            {/* <p>• {selectedSession.location.nearby}</p> */}
             <p>• {selectedSession.location.instructions}</p>
             <p>• {selectedSession.location.parking}</p>
           </div>

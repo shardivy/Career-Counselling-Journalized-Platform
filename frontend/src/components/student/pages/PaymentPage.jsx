@@ -211,7 +211,7 @@ const PaymentPage = () => {
                     lineHeight: 1.8,
                   }}
                 >
-                  <p><b>Account Name:</b> Reena Bhutada</p>
+                  <p><b>Account Name:</b> Priti Borse</p>
                   <p><b>Account Number:</b> 20194273045</p>
                   <p><b>Bank:</b> State Bank of India</p>
                   <p><b>Branch:</b> Bavdhan, Pune - 411021</p>

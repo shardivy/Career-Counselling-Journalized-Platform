@@ -789,7 +789,7 @@ const HhSession = () => {
               />
               <div>
                 <Text strong style={{ fontSize: 16 }}>
-                  Mrs. Reena Bhutada
+                  Mrs. Priti Borse
                 </Text>
               </div>
             </div>
